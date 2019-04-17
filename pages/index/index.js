@@ -5,19 +5,76 @@ Page({
    */
   data: {
     //首页导航数据
-    navList:[]
+    navList:[],
+    //导航栏当前位置
+    currentIndexNav:0,
+    //轮播图数据
+    swiperList:[],
+    //视频数据
+    videosList:[],
   },
 
   /**
    * 获取首页导航数据
    */
   getNavList(){
+    let that = this;
     wx.request({
       url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/navList',
       success(res){
-        console.log(res);
+        if(res.data.code === 0)
+        {
+          that.setData({
+            navList: res.data.data.navList
+          })
+        }
       }
     })
+  },
+
+  /**
+   * 点击首页导航
+   */
+  activeNav(e){
+    console.log(e)
+    this.setData({
+      currentIndexNav:e.target.dataset.index
+    })
+  },
+
+  /**
+   * 获取轮播图数据
+   */
+  getSwiperList(){
+    let that = this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/swiperList',
+      success(res) {
+        if (res.data.code === 0) {
+          that.setData({
+            swiperList: res.data.data.swiperList
+          })
+        }
+      }
+    })
+  },
+
+  /**
+   * 获取视频数据
+   */
+  getVedioList(){
+    let that = this;
+    wx.request({
+      url: 'https://easy-mock.com/mock/5c1dfd98e8bfa547414a5278/bili/videosList',
+      success(res){
+        if(res.data.code === 0){
+          that.setData({
+            videosList: res.data.data.videosList
+          })
+        }
+      }
+    })
+
   },
 
   /**
@@ -26,7 +83,10 @@ Page({
   onLoad: function (options) {
     //获取首页导航数据
     this.getNavList();
-    
+    //获取轮播图数据
+    this.getSwiperList();
+    //获取视频数据
+    this.getVedioList();
   },
 
   /**

@@ -1,4 +1,8 @@
 /**index.wxss**/
+page{
+  color: #666;
+  padding: 10rpx;
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -19,3 +23,43 @@
 .usermotto {
   margin-top: 200px;
 }
+
+/* 首页导航*/
+.nav_wrap{}
+
+.nav{
+  white-space: nowrap;
+  padding: 10rpx
+}
+
+.nav_item{
+  padding: 20rpx 45rpx;
+  font-size: 30rpx;
+  display: inline-block
+}
+
+.nav_item.active{
+  border-bottom: 5rpx solid #de688b;
+
+}
+
+/* 轮播图*/
+.sliders {
+  margin-top: 10rpx;
+}
+.sliders swiper{
+  width: 100%;
+  height: 220rpx; 
+}
+
+.sliders navigator{
+  width: 100%;
+  height: 100%;
+}
+
+.sliders image{
+  width: 100%;
+  height: 100%;
+}
+
+
