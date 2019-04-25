@@ -62,4 +62,11 @@ page{
   height: 100%;
 }
 
+/* 视频列表*/
+.video_wrap{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rpx;
+}
+
 
