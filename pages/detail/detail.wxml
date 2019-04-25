@@ -1,2 +1,9 @@
-<!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class='detail'>
+  <MyTitle></MyTitle>
+  <!-- 视频详情 -->
+  <view class='video_info'>
+    <!-- 视频标签 -->
+    <video src='{{videoInfo.videoSrc}}' controls></video>
+  </view>
+  
+</view>
